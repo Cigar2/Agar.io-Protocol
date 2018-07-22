@@ -23,6 +23,17 @@
 # Server -> Client
 
 ## Update Nodes
-| Position | Data Type     | Description
+| Position | Data Type     | Info
 |----------|---------------|-----------------
 | 0        | uint8         | Packet ID (16)
+
+## Set Border
+Sets the map border.
+
+| Position | Data Type | Info
+|----------|-----------|-----------------
+| 0        | uint8     | Packet ID (64)
+| 1        | float64   | Left position
+| 9        | float64   | Top position
+| 17       | float64   | Right position
+| 25       | float64   | Bottom position
