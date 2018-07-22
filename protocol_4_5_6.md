@@ -21,3 +21,8 @@
 | 0        | uint8     | Packet ID (21)
 
 # Server -> Client
+
+## Update Nodes
+| Position | Data Type     | Description
+|----------|---------------|-----------------
+| 0        | uint8         | Packet ID (16)
