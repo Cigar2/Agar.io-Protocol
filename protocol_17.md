@@ -2,3 +2,8 @@
 
 
 # Server -> Client
+
+## Update Nodes (16)
+| Position | Data Type | Info
+|----------|-----------|-----------------
+|          |           |
