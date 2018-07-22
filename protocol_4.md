@@ -1,6 +1,6 @@
 # Client -> Server
 
-## Mouse move
+## Mouse Move
 | Position | Data Type            | Info
 |----------|----------------------|-----------------
 | 0        | uint8                | Packet ID (16)
@@ -12,5 +12,10 @@
 | Position | Data Type | Info
 |----------|-----------|-----------------
 | 0        | uint8     | Packet ID (17)
+
+## Eject Mass aka Feed
+| Position | Data Type | Info
+|----------|-----------|-----------------
+| 0        | uint8     | Packet ID (21)
 
 # Server -> Client
