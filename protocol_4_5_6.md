@@ -12,7 +12,7 @@
 | 0        | uint8     | Packet ID (1)
 
 
-## Mouse Move
+### Mouse Move
 (1) 4: float64, 5 early: int16, 5 late and 6: int32
 
 | Position | Data Type            | Info
@@ -22,24 +22,24 @@
 | 9        | (1)                  | Mouse Y
 | 17       | uint32               | 0
 
-## Split
+### Split
 | Position | Data Type | Info
 |----------|-----------|-----------------
 | 0        | uint8     | Packet ID (17)
 
-## Eject Mass
+### Eject Mass
 | Position | Data Type | Info
 |----------|-----------|-----------------
 | 0        | uint8     | Packet ID (21)
 
 # Server -> Client
 
-## Update Nodes
+### Update Nodes
 | Position | Data Type     | Info
 |----------|---------------|-----------------
 | 0        | uint8         | Packet ID (16)
 
-## Set Border
+### Set Border
 Sets the map border.
 
 | Position | Data Type | Info
