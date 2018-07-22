@@ -1,2 +1,5 @@
 # Agar.io-Protocol
-It only uses little endian btw
+Agar.io protocol documentation (4-18) without integrity checks
+
+### Things to note
+- All protocols only use little endian
