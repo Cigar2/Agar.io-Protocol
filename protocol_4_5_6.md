@@ -4,7 +4,13 @@
 | Position | Data Type | Info
 |----------|-----------|-----------------
 | 0        | uint8     | Packet ID (0)
-| 1        | asdf      | asdf
+| 1        | asdf      | Nickname
+
+### Spectate
+| Position | Data Type | Info
+|----------|-----------|-----------------
+| 0        | uint8     | Packet ID (1)
+
 
 ## Mouse Move
 (1) 4: float64, 5 early: int16, 5 late and 6: int32
