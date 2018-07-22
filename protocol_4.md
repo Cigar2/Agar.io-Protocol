@@ -13,7 +13,7 @@
 |----------|-----------|-----------------
 | 0        | uint8     | Packet ID (17)
 
-## Eject Mass aka Feed
+## Eject Mass
 | Position | Data Type | Info
 |----------|-----------|-----------------
 | 0        | uint8     | Packet ID (21)
