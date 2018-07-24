@@ -40,8 +40,6 @@
 | 0        | uint8         | Packet ID (16)
 
 ### Set Border
-Sets the map border.
-
 | Position | Data Type | Info
 |----------|-----------|-----------------
 | 0        | uint8     | Packet ID (64)
