@@ -2,6 +2,8 @@
 
 # Server -> Client
 
+## Added in protocol 18
+
 ### Battle timer
 | Position | Data Type | Info
 |----------|-----------|-----------------
