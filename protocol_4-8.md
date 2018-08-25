@@ -47,3 +47,15 @@
 | 9        | float64   | Top position
 | 17       | float64   | Right position
 | 25       | float64   | Bottom position
+
+### Reset Connection 1
+| Position | Data Type | Description
+|----------|-----------|-----------------
+| 0        | uint8     | Packet ID (254)
+| 1        | uint32    | Protocol version
+
+### Reset Connection 2
+| Position | Data Type | Description
+|----------|-----------|-----------------
+| 0        | uint8     | Packet ID (255)
+| 1        | uint32    | Protocol version
