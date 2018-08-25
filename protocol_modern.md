@@ -18,7 +18,7 @@
 | string  | UTF-8 null-terminated string in little endian |
 | struct  | An object defined further in the specification |
 
-Types in an array (i.e. `string[]`) are repeated in binary form but will always have a way of terminating - be it a length given earlier or termination when an integer becomes zero.
+Types in an array (i.e. `string[]`) are repeated in binary form but will always have a way of terminating - be it a length given earlier or termination when an integer inside a `struct` becomes zero.
 
 # Client -> Server
 
@@ -93,7 +93,7 @@ Sent 25 times per second by default. If nothing is updated in a tick, this messa
 | ----- | --------- | ------ | ----------- |
 | 0     | uint8     |        | Message opcode (`0x03`) |
 | 1     | uint16    |        | Global update flags |
-| 2?    | struct    | **SO** | Spectate view area |
+| 3?    | struct    | **SO** | Spectate view area |
 | ?     | struct    | **WO** | World border |
 | ?     | struct    | **SI** | Server information |
 | ?     | struct    | **WI** | World information |
