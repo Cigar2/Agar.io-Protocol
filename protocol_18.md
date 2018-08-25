@@ -12,7 +12,6 @@
 | Position | Data Type | Info
 |----------|-----------|-----------------
 | 0        | uint8     | Packet ID (177)
-| 1        |           | 
 
 ### Battle area
 | Position | Data Type | Info
