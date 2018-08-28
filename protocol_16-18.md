@@ -2,7 +2,7 @@
 
 # Server -> Client
 
-## Added in protocol 18
+## Added in protocol 18 (Battle Royale)
 
 ### Game starting
 | Offset | Type | Info
