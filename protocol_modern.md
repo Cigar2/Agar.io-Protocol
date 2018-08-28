@@ -7,16 +7,18 @@
 | boolean | Unsigned 8-bit integer where 0 is false and 1 is true |
 | uint8   | Unsigned 8-bit integer |
 | int8    | Signed 8-bit integer |
-| uint16  | Unsigned 16-bit integer in little endian |
-| int16   | Signed 16-bit integer in little endian |
-| uint24  | Unsigned 24-bit integer in little endian |
-| int24   | Signed 24-bit integer in little endian |
-| uint32  | Unsigned 32-bit integer in little endian |
-| int32   | Signed 32-bit integer in little endian |
-| float32 | Single-precision IEEE-754 floating point in little endian |
-| float64 | Double-precision IEEE-754 floating point in little endian |
-| string  | UTF-8 null-terminated string in little endian |
+| uint16  | Unsigned 16-bit integer |
+| int16   | Signed 16-bit integer |
+| uint24  | Unsigned 24-bit integer |
+| int24   | Signed 24-bit integer |
+| uint32  | Unsigned 32-bit integer |
+| int32   | Signed 32-bit integer |
+| float32 | Single-precision IEEE-754 floating point |
+| float64 | Double-precision IEEE-754 floating point |
+| string  | UTF-8 null-terminated string |
 | struct  | An object defined further in the specification |
+
+All raw multi-byte data types are in little endian.
 
 Types in an array (i.e. `string[]`) are repeated in binary form but will always have a way of terminating - be it a length given earlier or termination when an integer inside a `struct` becomes zero.
 
