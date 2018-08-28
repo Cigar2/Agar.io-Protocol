@@ -1,3 +1,5 @@
+###### This file is incomplete, check out this file for more information: https://github.com/forairan/Agar.io-Protocol/blob/master/Protocol.md
+
 # Client -> Server
 
 ### Set Nickname (spawns the player)
