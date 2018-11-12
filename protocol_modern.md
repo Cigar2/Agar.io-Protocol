@@ -117,7 +117,7 @@ Sent 25 times per second by default. If nothing is updated in a tick, this messa
 | 8       | `0x0008`    | **WI** | World information present |
 | 16      | `0x0010`    | **CD** | Incoming chat messages present |
 | 32      | `0x0020`    | **LD** | Leaderboard data present |
-| 64      | `0x0040`    |        | Clear all visible cells |
+| 64      | `0x0040`    |        | Clear visible cells and leaderboard |
 | 128     | `0x0080`    | **AC** | Added cells present |
 | 256     | `0x0100`    | **UC** | Updated cells present |
 | 512     | `0x0200`    | **EC** | Eaten cells present |
@@ -310,4 +310,4 @@ Sent 25 times per second by default. If nothing is updated in a tick, this messa
 ### Revision 2
 
 - Moved flags AC, UC, EC, RC by one bit.
-- Added the `Remove all visible cells` flag.
+- Added the `Clear visible cells and leaderboard` flag.
