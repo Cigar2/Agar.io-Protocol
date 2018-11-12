@@ -1,4 +1,4 @@
-# Modern Protocol revision 1
+# Modern Protocol revision 2
 
 # Type definition
 
@@ -117,10 +117,11 @@ Sent 25 times per second by default. If nothing is updated in a tick, this messa
 | 8       | `0x0008`    | **WI** | World information present |
 | 16      | `0x0010`    | **CD** | Incoming chat messages present |
 | 32      | `0x0020`    | **LD** | Leaderboard data present |
-| 64      | `0x0040`    | **AC** | Added cells present |
-| 128     | `0x0080`    | **UC** | Updated cells present |
-| 256     | `0x0100`    | **EC** | Eaten cells present |
-| 512     | `0x0200`    | **RC** | Removed cells present |
+| 64      | `0x0040`    |        | Clear all visible cells |
+| 128     | `0x0080`    | **AC** | Added cells present |
+| 256     | `0x0100`    | **UC** | Updated cells present |
+| 512     | `0x0200`    | **EC** | Eaten cells present |
+| 1024    | `0x0400`    | **RC** | Removed cells present |
 
 ### Spectate view area
 
@@ -303,3 +304,10 @@ Sent 25 times per second by default. If nothing is updated in a tick, this messa
 | Index | Type      | Flag   | Description |
 | ----- | --------- | ------ | ----------- |
 | 0     | uint32    |        | ID **Terminates array if `0x00000000`** |
+
+# Update history
+
+### Revision 2
+
+- Moved flags AC, UC, EC, RC by one bit.
+- Added the `Remove all visible cells` flag.
