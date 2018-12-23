@@ -67,32 +67,29 @@ The Extended Flags:
 | 6 | 0x40 |  |
 | 7 | 0x80 |  |
 
-If someone knows some more details, please let me know, 
-I will update the table.
+### 2) Leaderboard FFA message
 
-### **2) Leaderboard FFA message 0x35**
+| Offset | Type | Description |
+|--------|------|-------------|
+| 0      | byte | Packet ID (53) |
+| 3      | record list | FFA Records |
 
-| Offset | Value | Type | Description |
-| --- | --- | --- | --- |
-| 0 | 0x35 | byte | Leaderboard FFA message code |
-| 3 | xx | record list | FFA Records |
+### 3) Leaderboard FFA teams message 0x36
 
-### **3) Leaderboard FFA teams message 0x36**
-
-| Offset | Value | Type | Description |
-| --- | --- | --- | --- |
-| 0 | 0x36 | byte | Leaderboard FFA message code |
-| 1 | xx | uint16 | ?? probably the count of facebook friends |
-| 3 | xx | record list | FFA Records |
+| Offset | Type | Description |
+|--------|------| --- |
+| 0      | byte  | Packet ID (54) |
+| 1      | uint16 | ?? probably the count of facebook friends |
+| 3      | record list | FFA Records |
 
 
 The structure of FFA Record is the following:
 
 | Offset | Type | Description |
-| --- | --- | --- |
-| 0 | byte | RecordFlags  |
-| xx | utf8 zero string | (optional) Cell Name (present when isNamePresent is set)  |
-| xx | uint32 | (optional) Player ID (present when isPlayerIdPresent is set) |
+|--------|------|-------------|
+| 0      | byte | RecordFlags |
+| xx     | utf8 zero string | (optional) Cell Name (present when isNamePresent is set)  |
+| xx     | uint32 | (optional) Player ID (present when isPlayerIdPresent is set) |
 
 
 RecordFlags description:
@@ -107,9 +104,3 @@ RecordFlags description:
 | 5 | 0x20 |  |
 | 6 | 0x40 |  |
 | 7 | 0x80 |  |
-
-That's it :)
-Please let me know if you know more details.
-
-History:
-26.05.2018: updated description for Extended flags and leaderboard RecordFlags description
