@@ -81,3 +81,6 @@
 | 7        | uint16    | Player count (read below while (playerCount--))
 | ?        | null-utf8-string    | Player nickname
 | ?        | uint32    | Player position
+
+## Added in protocol 19 (Minimap)
+[Click here](https://github.com/issy123/agario-protocol/issues/22)
