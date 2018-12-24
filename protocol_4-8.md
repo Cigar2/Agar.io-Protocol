@@ -37,9 +37,17 @@
 # Server -> Client
 
 ### Update Nodes
+(1) before 6: uint32, on + after: uint16
 | Offset | Data Type     | Info
 |--------|---------------|-----------------
 | 0      | uint8         | Packet ID (16)
+| 1      | uint16        | Number of nodes to be destroyed
+| 2...?  | Destruct Data | Nodes' ID marked for destruction
+| ?...?  | Node Data     | Data for all nodes
+| ?      | uint32        | Always 0; terminates the node data listing
+| ?      | uint16        | Always 0; discarded by the client
+| ?      | (1)           | Number of nodes marked for destroying
+| ?...?  | Destruct Data | Node ID of each destroyed node (uint32)
 
 ### Set Border
 | Offset | Data Type | Info
