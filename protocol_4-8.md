@@ -38,6 +38,7 @@
 
 ### Update Nodes
 (1) before 6: uint32, on + after: uint16
+
 | Offset | Data Type     | Info
 |--------|---------------|-----------------
 | 0      | uint8         | Packet ID (16)
