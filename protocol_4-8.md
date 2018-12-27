@@ -1,4 +1,4 @@
-###### This doc is incomplete, check out this file for more information: https://github.com/forairan/Agar.io-Protocol/blob/master/Protocol.md
+###### Source: https://github.com/forairan/Agar.io-Protocol/blob/master/Protocol.md
 
 # Client -> Server
 
@@ -28,6 +28,16 @@
 | Offset | Data Type | Info
 |--------|-----------|-----------------
 | 0      | uint8     | Packet ID (17)
+
+### Spectate free roam (Q key pressed)
+| Offset | Data Type | Info
+|--------|-----------|-----
+| 0      | uint8     | Packet ID (18)
+
+### Q key released
+| Offset | Data Type | Info
+|--------|-----------|-----
+| 0      | uint8     | Packet ID (19)
 
 ### Eject Mass
 | Offset | Data Type | Info
@@ -60,12 +70,14 @@
 | 25     | float64   | Bottom position
 
 ### Reset Connection 1
+Sent at the beginning of a conneciton, before reset connection 2. Server must send Clear Nodes and Set Border packets to keep the client connected.
 | Offset | Data Type | Description
 |--------|-----------|-----------------
 | 0      | uint8     | Packet ID (254)
 | 1      | uint32    | Protocol version
 
 ### Reset Connection 2
+Sent directly after reset connection 1.
 | Offset | Data Type | Description
 |--------|-----------|-----------------
 | 0      | uint8     | Packet ID (255)
