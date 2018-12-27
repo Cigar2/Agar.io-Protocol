@@ -1,6 +1,6 @@
 ###### Source: https://github.com/forairan/Agar.io-Protocol/blob/master/Protocol.md
 
-string = null terminated utf-(before 6: 16, after + on: 8) string
+string = null terminated (before 6: utf-16, after + on 6: utf-8) string
 
 # Client -> Server
 
