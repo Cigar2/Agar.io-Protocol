@@ -1,18 +1,19 @@
 ###### Source: https://github.com/forairan/Agar.io-Protocol/blob/master/Protocol.md
 
+string = null terminated utf-(before 6: 16, after + on: 8) string
+
 # Client -> Server
 
 ### Set Nickname (spawns the player)
 | Offset | Data Type | Info
 |--------|-----------|-----------------
 | 0      | uint8     | Packet ID (0)
-| 1      | asdf      | Nickname
+| 1      | string    | Nickname
 
 ### Spectate
 | Offset | Data Type | Info
 |--------|-----------|-----------------
 | 0      | uint8     | Packet ID (1)
-
 
 ### Mouse Move
 (1) 4: float64, 5 early: int16, 5 late and 6: int32
@@ -20,9 +21,9 @@
 | Offset | Data Type            | Info
 |--------|----------------------|-----------------
 | 0      | uint8                | Packet ID (16)
-| 1      | (1)                  | Mouse X
-| 9      | (1)                  | Mouse Y
-| 17     | uint32               | 0
+| ?      | (1)                  | Mouse X
+| ?      | (1)                  | Mouse Y
+| ?     | uint32               | Node ID of the cell to move (not used anymore).
 
 ### Split
 | Offset | Data Type | Info
@@ -59,6 +60,46 @@
 | ?      | uint16        | Always 0; discarded by the client
 | ?      | (1)           | Number of nodes marked for destroying
 | ?...?  | Destruct Data | Node ID of each destroyed node (uint32)
+
+### Update Position and Size
+Used for spectating.
+(1): 
+| Offset | Data Type | Info
+|--------|-----------|-----
+| 0      | uint8     | Packet ID (17)
+| 1      | float32   | X position
+| 5      | float32   | Y position
+| 9      | float32   | Zoom factor of client
+
+### Clear Nodes
+| Offset | Data Type | Info
+|--------|-----------|-----
+| 0      | uint8     | Packet ID (20)
+
+### Draw Line
+Drawn from all player cells to the specified position
+| Offset | Data Type | Info
+|--------|-----------|-----
+| 0      | uint8     | Packet ID (21)
+| 1      | uint16    | X position
+| 3      | uint16    | Y position
+
+### Add Node
+Nodes added by this packet are centered on the client's camera.
+| Offset | Data Type | Info
+|--------|-----------|-----
+| 0      | uint8     | Packet ID (32)
+| 1      | uint32    | Node ID
+
+### Update Leaderboard (FFA)
+| Offset | Data Type | Info
+|--------|-----------|-----
+| 0      | uint8     | Packet ID (49)
+
+### Update Leaderboard (Team)
+| Offset | Data Type | Info
+|--------|-----------|-----
+| 0      | uint8     | Packet ID (50)
 
 ### Set Border
 | Offset | Data Type | Info
