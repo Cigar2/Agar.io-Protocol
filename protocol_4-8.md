@@ -77,7 +77,8 @@ Used for spectating.
 | 0      | uint8     | Packet ID (20)
 
 ### Draw Line
-Drawn from all player cells to the specified position
+Drawn from all player cells to the specified position.
+
 | Offset | Data Type | Info
 |--------|-----------|-----
 | 0      | uint8     | Packet ID (21)
@@ -86,6 +87,7 @@ Drawn from all player cells to the specified position
 
 ### Add Node
 Nodes added by this packet are centered on the client's camera.
+
 | Offset | Data Type | Info
 |--------|-----------|-----
 | 0      | uint8     | Packet ID (32)
@@ -112,6 +114,7 @@ Nodes added by this packet are centered on the client's camera.
 
 ### Reset Connection 1
 Sent at the beginning of a conneciton, before reset connection 2. Server must send Clear Nodes and Set Border packets to keep the client connected.
+
 | Offset | Data Type | Description
 |--------|-----------|-----------------
 | 0      | uint8     | Packet ID (254)
@@ -119,6 +122,7 @@ Sent at the beginning of a conneciton, before reset connection 2. Server must se
 
 ### Reset Connection 2
 Sent directly after reset connection 1.
+
 | Offset | Data Type | Description
 |--------|-----------|-----------------
 | 0      | uint8     | Packet ID (255)
