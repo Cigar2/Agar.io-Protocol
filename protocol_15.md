@@ -2,7 +2,7 @@
 
 ### **1) Cell Update message 0x10**
 
-u8str = utf8 null-terminated string
+string = utf8 null-terminated string
 
 A little change in the structure of cell update message:
 
@@ -33,8 +33,8 @@ Structure of Cell Update Record:
 | 14     | byte   | Flags
 | xx     | byte   | (optional) Extended Flags (Present when bit 7 of Flags is set to 1)
 | xx     | 3 byte | (optional) Color (r,g,b components)
-| xx     | string | (optional) Skin name (zero-terminated string)
-| xx     | string | (optional) Cell name (zero-terminated string, UTF8 encoding)
+| xx     | string | (optional) Skin name (zts, utf8 or utf16?)
+| xx     | string | (optional) Cell name
 | xx     | uint32 | (optional) PlayerId - it is resent when bit isPlayerIdPresent of Extended Flags is set to 1. It contains player ID (do not confuse with cell ID, this is player ID)
 
 Structure of Remove Record:
@@ -58,16 +58,16 @@ The Flags:
 
 The Extended Flags:
 
-| Bit | Hex Mask | Description |
-| --- | --- | --- |
-| 0 | 0x01 | isPellet (if 1 then this is pellet cell) |
-| 1 | 0x02 |  |
-| 2 | 0x04 | isPlayerIdPresent (if 1 then PlayerId field is present in the record)  |
-| 3 | 0x08 |  |
-| 4 | 0x10 |  |
-| 5 | 0x20 |  |
-| 6 | 0x40 |  |
-| 7 | 0x80 |  |
+| Bit | Hex Mask | Description
+|-----|----------|------------
+| 0   | 0x01     | isPellet (if 1 then this is pellet cell)
+| 1   | 0x02     |
+| 2   | 0x04     | isPlayerIdPresent (if 1 then PlayerId field is present in the record)
+| 3   | 0x08     |
+| 4   | 0x10     |
+| 5   | 0x20     |
+| 6   | 0x40     |
+| 7   | 0x80     |
 
 ### 2) Leaderboard FFA message
 
@@ -89,20 +89,20 @@ The structure of FFA Record is the following:
 
 | Offset | Type     | Description 
 |--------|----------|------------
-| 0      | byte | RecordFlags
-| xx     | u8str | (optional) Cell Name (present when isNamePresent is set)  |
-| xx     | uint32 | (optional) Player ID (present when isPlayerIdPresent is set) |
+| 0      | byte     | RecordFlags
+| xx     | string   | (optional) Cell Name (present when isNamePresent is set)
+| xx     | uint32   | (optional) Player ID (present when isPlayerIdPresent is set)
 
 
 RecordFlags description:
 
-| Bit | Hex Mask | Description |
-| --- | --- | --- |
-| 0 | 0x01 | (not used) ?probably isOrderPresent? |
-| 1 | 0x02 | (optional) isNamePresent |
-| 2 | 0x04 | (optional) isPlayerIdPresent (usually appears with isNamePresent)  |
-| 3 | 0x08 | (optional) isMe (usually appears without isNamePresent and without isPlayerIdPresent, because it's already known for the client ) |
-| 4 | 0x10 | (optional) ?probably isFriend? |
-| 5 | 0x20 |  |
-| 6 | 0x40 |  |
-| 7 | 0x80 |  |
+| Bit | Hex Mask | Description
+|-----|----------|------------
+| 0   | 0x01     | (not used) ?probably isOrderPresent?
+| 1   | 0x02     | (optional) isNamePresent
+| 2   | 0x04     | (optional) isPlayerIdPresent (usually appears with isNamePresent)
+| 3   | 0x08     | (optional) isMe (usually appears without isNamePresent and without isPlayerIdPresent, because it's already known for the client)
+| 4   | 0x10     | (optional) ?probably isFriend?
+| 5   | 0x20     |
+| 6   | 0x40     |
+| 7   | 0x80     |
