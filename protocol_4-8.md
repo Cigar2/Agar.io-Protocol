@@ -63,7 +63,7 @@ string = null terminated utf-(before 6: 16, after + on: 8) string
 
 ### Update Position and Size
 Used for spectating.
-(1): 
+
 | Offset | Data Type | Info
 |--------|-----------|-----
 | 0      | uint8     | Packet ID (17)
