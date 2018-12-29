@@ -45,6 +45,13 @@ string = null terminated (before 6: utf-16, after + on 6: utf-8) string
 |--------|-----------|-----------------
 | 0      | uint8     | Packet ID (21)
 
+### (Unoffical) Chat message
+| Offset | Data Type | Info
+|--------|-----------|-----
+| 0      | uint8     | Packet ID (99)
+| 1      | uint8     | Flags? 0
+| 2      | string    | The chat message
+
 # Server -> Client
 
 ### Update Nodes
@@ -111,6 +118,15 @@ Nodes added by this packet are centered on the client's camera.
 | 9      | float64   | Top position
 | 17     | float64   | Right position
 | 25     | float64   | Bottom position
+
+### (Unofficial) Chat Message
+| Offset | Data Type | Info
+|--------|-----------|-----
+| 0      | uint8     | Packet ID (99)
+| 1      | uint8     | Flags
+| 2-4    | uint8     | RGB color
+| 5      | string    | Username
+| ?      | string    | The chat message
 
 ### Reset Connection 1
 Sent at the beginning of a conneciton, before reset connection 2. Server must send Clear Nodes and Set Border packets to keep the client connected.
