@@ -78,7 +78,12 @@ Used for spectating.
 | 5      | float32   | Y position
 | 9      | float32   | Zoom factor of client
 
-### Clear Nodes
+### (Protocol > 4) Clear All Nodes
+| Offset | Data Type | Info
+|--------|-----------|-----
+| 0      | uint8     | Packet ID (18)
+
+### (Protocol > 4 ? Clear My Nodes : Clear Nodes)
 | Offset | Data Type | Info
 |--------|-----------|-----
 | 0      | uint8     | Packet ID (20)
