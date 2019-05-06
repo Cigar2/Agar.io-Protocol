@@ -75,3 +75,6 @@ All types but `0` have 1 field with a string of the killed nickname (type 0 has 
 
 ## Added in protocol 19 (Minimap)
 [Click here](https://github.com/issy123/agario-protocol/issues/22)
+
+## Changed in protocol 20
+Set Border no longer has server version, it has been moved to Cipher Key (241)
