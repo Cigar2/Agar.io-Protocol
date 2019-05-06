@@ -116,6 +116,7 @@ Nodes added by this packet are centered on the client's camera.
 | 0      | uint8     | Packet ID (50)
 
 ### Set Border
+(1) only sent first time
 | Offset | Data Type | Info
 |--------|-----------|-----------------
 | 0      | uint8     | Packet ID (64)
@@ -123,7 +124,8 @@ Nodes added by this packet are centered on the client's camera.
 | 9      | float64   | Top position
 | 17     | float64   | Right position
 | 25     | float64   | Bottom position
-| 33     | string    | Only sent the first time, contains server version and gamemode
+| 32     | uint32    | (1) gamemode \[ffa = 0, teams = 1, experimental = 4 and party = 8\]
+| 33     | string    | (1) server version
 
 ### (Unofficial) Chat Message
 | Offset | Data Type | Info
