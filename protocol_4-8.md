@@ -125,8 +125,8 @@ Nodes added by this packet are centered on the client's camera.
 | 9      | float64   | Top position
 | 17     | float64   | Right position
 | 25     | float64   | Bottom position
-| 32     | uint32    | (1) (2) gamemode
-| 33     | string    | (1) server version
+| 33     | uint32    | (1) (2) gamemode
+| 34     | string    | (1) server version
 
 ### (Unofficial) Chat Message
 | Offset | Data Type | Info
