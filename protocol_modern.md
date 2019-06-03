@@ -1,4 +1,4 @@
-# Modern Protocol revision 2
+# Modern Protocol revision 3
 
 # Type definition
 
@@ -31,7 +31,7 @@ Sent at connection start.
 | Index | Type      | Flag   | Description |
 | ----- | --------- | ------ | ----------- |
 | 0     | uint8     |        | Message opcode (`0x01`) |
-| 1     | uint32    |        | Revision (`0x00000001`) |
+| 1     | uint32    |        | Revision (`0x00000003`) |
 
 ## 0x02 Ping
 
@@ -127,18 +127,18 @@ Sent 25 times per second by default. If nothing is updated in a tick, this messa
 
 | Index | Type      | Flag   | Description |
 | ----- | --------- | ------ | ----------- |
-| 0     | int32     |        | View area center X |
-| 4     | int32     |        | View area center Y |
+| 0     | float32   |        | View area center X |
+| 4     | float32   |        | View area center Y |
 | 8     | float32   |        | View area scale |
 
 ### World border
 
 | Index | Type      | Flag   | Description |
 | ----- | --------- | ------ | ----------- |
-| 0     | int32     |        | Left bound |
-| 4     | int32     |        | Right bound |
-| 8     | int32     |        | Top bound |
-| 12    | int32     |        | Bottom bound |
+| 0     | float32   |        | Left bound |
+| 4     | float32   |        | Right bound |
+| 8     | float32   |        | Top bound |
+| 12    | float32   |        | Bottom bound |
 
 ### Server information
 
@@ -239,8 +239,8 @@ Sent 25 times per second by default. If nothing is updated in a tick, this messa
 | ----- | --------- | ------ | ----------- |
 | 0     | uint32    |        | ID **Terminates array if `0x00000000`** |
 | 4     | uint8     |        | Cell type |
-| 5     | int32     |        | Cell position X |
-| 9     | int32     |        | Cell position Y |
+| 5     | float32   |        | Cell position X |
+| 9     | float32   |        | Cell position Y |
 | 16    | uint16    |        | Cell size |
 | 18    | uint8     |        | Cell color R |
 | 19    | uint8     |        | Cell color G |
@@ -273,8 +273,8 @@ Sent 25 times per second by default. If nothing is updated in a tick, this messa
 | ----- | --------- | ------ | ----------- |
 | 0     | uint32    |        | ID **Terminates array if `0x00000000`** |
 | 1     | uint8     |        | Updated info flags |
-| 2?    | int32     | **HP** | Cell position X |
-| 6?    | int32     | **HP** | Cell position Y |
+| 2?    | float32   | **HP** | Cell position X |
+| 6?    | float32   | **HP** | Cell position Y |
 | ?     | uint16    | **HZ** | Cell size |
 | ?     | uint8     | **HC** | Cell color R |
 | ?     | uint8     | **HC** | Cell color G |
@@ -307,7 +307,16 @@ Sent 25 times per second by default. If nothing is updated in a tick, this messa
 
 # Update history
 
-### Revision 2
+### Revision 3 @ 2019-06-03
 
-- Moved flags AC, UC, EC, RC by one bit.
-- Added the `Clear visible cells and leaderboard` flag.
+- Moved flags AC, UC, EC, RC by one bit
+- Added the `Clear visible cells and leaderboard` flag
+
+### Revision 2 @ 2018-11-12
+
+- Moved flags AC, UC, EC, RC by one bit
+- Added the `Clear visible cells and leaderboard` flag
+
+### Revision 1 @ 2018-08-25
+
+- Initial
