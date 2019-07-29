@@ -309,8 +309,7 @@ Sent 25 times per second by default. If nothing is updated in a tick, this messa
 
 ### Revision 3 @ 2019-06-03
 
-- Moved flags AC, UC, EC, RC by one bit
-- Added the `Clear visible cells and leaderboard` flag
+- Positions (view area, world bounds, cell position) are now defined by float32 rather than int32
 
 ### Revision 2 @ 2018-11-12
 
